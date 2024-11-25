@@ -6,8 +6,15 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT
 
+app.get("/", (req, res) => {
+    res.status(200).json({message: "Hello world!"})
+    return
+})
+
 app.post("/hook", (req, res) => {
-    res.status(200).json({message: "Hi!"})
+    const bodyData = req.body
+
+    res.status(200).json({bodyData})
     return
 })
 
