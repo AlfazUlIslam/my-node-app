@@ -6,8 +6,11 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT
 
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 app.get("/", (req, res) => {
-    res.status(200).json({message: "Hello world!"})
+    res.status(200).json({message: "Hello world!!!"})
     return
 })
 
