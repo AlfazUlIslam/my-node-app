@@ -8,6 +8,6 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-app.use("/api/test", testRouter)
+app.use("/", testRouter)
 
 app.listen(PORT, () => {console.log(`App listening on port: ${PORT}`)})
