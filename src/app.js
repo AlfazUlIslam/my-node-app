@@ -1,10 +1,8 @@
 const dotenv = require("dotenv")
 const express = require("express")
-
-dotenv.config()
+const { PORT } = require("./config/envs")
 
 const app = express()
-const port = process.env.PORT
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
@@ -21,4 +19,4 @@ app.post("/hook", (req, res) => {
     return
 })
 
-app.listen(port, () => {console.log(`App listening on port: ${port}`)})
+app.listen(PORT, () => {console.log(`App listening on port: ${PORT}`)})
